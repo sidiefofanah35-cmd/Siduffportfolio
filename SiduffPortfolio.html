@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siduff Portfolio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",Tahoma,sans-serif;}
+html,body{height:100%;}
+body{background:#f5f7fa;color:#333;line-height:1.6;display:flex;flex-direction:column;min-height:100vh;}
+
+/* Navbar */
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;background:#0a3d62;color:#fff;position:fixed;top:0;left:0;right:0;z-index:1000;}
+.brand{display:flex;align-items:center;font-size:1.3rem;font-weight:bold;}
+.brand span{margin-left:0.5rem;}
+.hamburger{display:block;cursor:pointer;font-size:1.5rem;background:none;border:none;color:white;}
+ul.nav-links{list-style:none;display:none;flex-direction:column;background:#0a3d62;position:absolute;top:60px;right:20px;border-radius:10px;min-width:180px;}
+ul.nav-links li{border-bottom:1px solid rgba(255,255,255,0.2);}
+ul.nav-links li a{display:block;padding:12px;text-decoration:none;color:#fff;}
+ul.nav-links li a:hover{background:#38ada9;}
+ul.nav-links.show{display:flex;}
+
+/* Sections */
+main{flex:1;padding-top:80px;}
+section{padding:4rem 2rem;max-width:1100px;margin:auto;display:none;}
+section.active{display:block;}
+section h2{font-size:2rem;color:#0a3d62;margin-bottom:1rem;border-left:4px solid #38ada9;padding-left:0.5rem;}
+section p{font-size:1rem;color:#555;margin-bottom:1rem;}
+
+/* Hero */
+.hero{display:flex;flex-direction:column;align-items:center;text-align:center;}
+.hero img{max-width:100%;border-radius:15px;margin-top:1.5rem;box-shadow:0 3px 8px rgba(0,0,0,0.2);}
+.hero h2{font-size:2.5rem;margin-bottom:1rem;}
+
+/* About */
+.about-container{text-align:center;}
+.about-container img{width:150px;height:150px;object-fit:cover;border-radius:50%;border:3px solid #38ada9;margin-bottom:1rem;}
+.about-container h3{color:#0a3d62;margin-bottom:0.5rem;}
+.about-container p{color:#555;font-size:1rem;margin-bottom:0.3rem;}
+
+/* Projects */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:1.5rem;}
+.project-card{background:#fff;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);overflow:hidden;transition:transform 0.3s ease;}
+.project-card img{width:100%;height:160px;object-fit:cover;}
+.project-card:hover{transform:translateY(-5px);}
+.project-card h3{color:#0a3d62;margin:0.8rem 1rem 0.3rem;}
+.project-card p{margin:0 1rem 1rem;}
+
+/* Services */
+.services-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin-top:1rem;}
+.service-card{background:#fff;padding:1rem;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+.service-card img{width:100%;height:150px;object-fit:cover;border-radius:8px;margin-bottom:0.5rem;}
+
+/* Contact form */
+form{display:flex;flex-direction:column;gap:1rem;margin-top:1rem;}
+input,textarea{padding:12px;border:1px solid #ccc;border-radius:8px;font-size:1rem;width:100%;}
+textarea{resize:vertical;min-height:120px;}
+button{padding:12px;background:#0a3d62;color:#fff;border:none;border-radius:8px;font-size:1rem;cursor:pointer;transition:background 0.3s;}
+button:hover{background:#38ada9;}
+
+/* Footer */
+footer{text-align:center;padding:1rem;background:#0a3d62;color:#fff;margin-top:auto;}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+<div class="brand"><span>💻</span><span>Siduff Portfolio</span></div>
+<button class="hamburger" onclick="toggleMenu()">☰</button>
+<ul class="nav-links" id="navLinks">
+<li><a onclick="showPage('home')">Home</a></li>
+<li><a onclick="showPage('about')">About</a></li>
+<li><a onclick="showPage('projects')">Projects</a></li>
+<li><a onclick="showPage('services')">Services</a></li>
+<li><a onclick="showPage('contact')">Contact</a></li>
+</ul>
+</nav>
+
+<main>
+  <!-- Home -->
+  <section id="home" class="active">
+    <div class="hero">
+      <h2>Welcome to Siduff Portfolio</h2>
+      <p>
+      I’m excited to share my journey in technology, where innovation meets creativity. 
+      My passion lies in crafting clean, efficient, and modern digital solutions that empower people and businesses. Explore my projects, services, and feel free to connect.
+      </p>
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200" alt="Tech workspace">
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <img src="Pass.jpg" alt="Sidie Fofanah Passport">
+      <h3>Sidie Fofanah</h3>
+      <p>B.Sc Honors Business & Information Technology</p>
+      <h4>From Njala University</h4>
+      <p><b>Certifications:</b> Web Development, Mobile App Development, Graphics Design, Database Management, Digital Marketing, Drone Technology</p>
+    </div>
+    <p>
+      I am a passionate developer with experience in web applications, mobile apps, cloud platforms, Computer hardware repair and troubleshooting and AI solutions. I aim to deliver scalable and creative projects that solve real-world problems.
+    </p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card"><img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800" alt=""><h3>Task Manager App</h3><p>Productivity web app for organizing daily tasks and tracking goals.</p></div>
+      <div class="project-card"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800" alt=""><h3>Corporate Website</h3><p>Responsive corporate website showcasing business solutions.</p></div>
+      <div class="project-card"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800" alt=""><h3>AI Chatbot</h3><p>AI-powered chatbot for customer support and engagement.</p></div>
+      <div class="project-card"><img src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800" alt=""><h3>E-Commerce Platform</h3><p>Full-stack e-commerce system with product listings and secure payments.</p></div>
+      <div class="project-card"><img src="https://images.unsplash.com/photo-1523473827534-86c1c9c07c8b?w=800" alt=""><h3>Portfolio Website</h3><p>Modern portfolio website showcasing skills and projects.</p></div>
+      <div class="project-card"><img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=800" alt=""><h3>Mobile Finance App</h3><p>Mobile-first finance app to track expenses and manage budgets.</p></div>
+      <div class="project-card"><img src="https://images.unsplash.com/photo-1590608897129-79c7f0c7f5c1?w=800" alt=""><h3>Social Media Dashboard</h3><p>Analytics dashboard for social media platforms.</p></div>
+      <div class="project-card"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800" alt=""><h3>Blog Platform</h3><p>Full-featured blogging platform with rich media support.</p></div>
+      <div class="project-card"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800" alt=""><h3>Online Learning Platform</h3><p>Interactive e-learning platform with courses and quizzes.</p></div>
+      <div class="project-card"><img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800" alt=""><h3>Cloud Collaboration Tool</h3><p>Web app enabling teams to collaborate and share documents in real-time.</p></div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <h2>Services</h2>
+    <div class="services-list">
+      <div class="service-card"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400" alt="Web Development"><h3>Web Development</h3><p>Responsive, scalable, and modern websites.</p></div>
+      <div class="service-card"><img src="https://images.unsplash.com/photo-1581091215366-3c82d1568c22?w=400" alt="Mobile App Development"><h3>Mobile App Development</h3><p>Cross-platform mobile applications for Android and iOS.</p></div>
+      <div class="service-card"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400" alt="UI/UX Design"><h3>UI/UX Design</h3><p>Creative and user-friendly interface designs.</p></div>
+      <div class="service-card"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400" alt="Cloud Solutions"><h3>Cloud Solutions</h3><p>Deployment, hosting, and cloud-based applications.</p></div>
+      <div class="service-card"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400" alt="AI & Chatbots"><h3>AI & Chatbots</h3><p>Artificial intelligence solutions for businesses.</p></div>
+      <div class="service-card"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400" alt="E-Commerce Solutions"><h3>E-Commerce Solutions</h3><p>Full-stack e-commerce platforms with secure payment integration.</p></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>You can reach me directly via call or WhatsApp, or send me a message using the form below.</p>
+    <p><b>📞 Call:</b> <a href="tel:+23290744215">+23290744215</a></p>
+    <p><b>💬 WhatsApp:</b> <a href="https://wa.me/23279594191" target="_blank">+23279594191</a></p>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+<p>&copy; 2025 Siduff Portfolio | Designed with passion 💻</p>
+</footer>
+
+<script>
+function showPage(pageId){
+  document.querySelectorAll("section").forEach(sec=>sec.classList.remove("active"));
+  document.getElementById(pageId).classList.add("active");
+  toggleMenu(false);
+}
+
+function toggleMenu(forceClose=null){
+  const navLinks=document.getElementById("navLinks");
+  if(forceClose===false){navLinks.classList.remove("show");}
+  else{navLinks.classList.toggle("show");}
+}
+</script>
+</body>
+</html>
